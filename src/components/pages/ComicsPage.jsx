@@ -1,5 +1,5 @@
-import Banner from '../components/Banner/Banner'
-import ComicsList from '../components/ComicsList/ComicsList'
+import Banner from '../Banner/Banner'
+import ComicsList from '../ComicsList/ComicsList'
 
 const ComicsPage = () => {
   return (

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import ErrorMessage from '../components/ErrorMessage/ErrorMessage'
+import ErrorMessage from '../ErrorMessage/ErrorMessage'
 
 const NotFoundPage = () => {
   const navigate = useNavigate()

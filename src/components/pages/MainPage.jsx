@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import RandomChar from '../components/RandomChar/RandomChar'
-import CharList from '../components/CharList/CharList'
-import CharInfo from '../components/CharInfo/CharInfo'
-import decoration from '../assets/img/vision.png'
-import CharSearchForm from '../components/CharSearchForm/CharSearchForm'
+import RandomChar from '../RandomChar/RandomChar'
+import CharList from '../CharList/CharList'
+import CharInfo from '../CharInfo/CharInfo'
+import decoration from '../../assets/img/vision.png'
+import CharSearchForm from '../CharSearchForm/CharSearchForm'
 
 const MainPage = () => {
   const [selectedCharId, setSelectedCharId] = useState(null)
