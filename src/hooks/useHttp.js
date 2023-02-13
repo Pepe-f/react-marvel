@@ -1,39 +1,39 @@
 import { useCallback, useState } from 'react'
 
 export const useHttp = () => {
-	const [isLoading, setIsLoading] = useState(false)
-	const [error, setError] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState(null)
 
-	const request = useCallback(
-		async (
-			url,
-			method = 'GET',
-			body = null,
-			headers = { 'Content-Type': 'application/json' }
-		) => {
-			setIsLoading(true)
+  const request = useCallback(
+    async (
+      url,
+      method = 'GET',
+      body = null,
+      headers = { 'Content-Type': 'application/json' }
+    ) => {
+      setIsLoading(true)
 
-			try {
-				const response = await fetch(url, { method, body, headers })
+      try {
+        const response = await fetch(url, { method, body, headers })
 
-				if (!response.ok) {
-					throw new Error(`Could not fetch ${url}, status: ${response.status}`)
-				}
+        if (!response.ok) {
+          throw new Error(`Could not fetch ${url}, status: ${response.status}`)
+        }
 
-				const data = await response.json()
-				setIsLoading(false)
+        const data = await response.json()
+        setIsLoading(false)
 
-				return data
-			} catch (e) {
-				setIsLoading(false)
-				setError(e.message)
-				throw e
-			}
-		},
-		[]
-	)
+        return data
+      } catch (e) {
+        setIsLoading(false)
+        setError(e.message)
+        throw e
+      }
+    },
+    []
+  )
 
-	const clearError = useCallback(() => setError(null), [])
+  const clearError = useCallback(() => setError(null), [])
 
-	return { isLoading, request, error, clearError }
+  return { isLoading, request, error, clearError }
 }

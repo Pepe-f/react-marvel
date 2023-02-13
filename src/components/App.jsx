@@ -9,23 +9,23 @@ import ComicItemPage from '../pages/ComicItemPage'
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'))
 
 const App = () => {
-	return (
-		<BrowserRouter>
-			<div className='app'>
-				<Header />
-				<main>
-					<Suspense fallback={<Spinner />}>
-						<Routes>
-							<Route path='/' element={<MainPage />} />
-							<Route path='/comics' element={<ComicsPage />} />
-							<Route path='/comics/:id' element={<ComicItemPage />} />
-							<Route path='*' element={<NotFoundPage />} />
-						</Routes>
-					</Suspense>
-				</main>
-			</div>
-		</BrowserRouter>
-	)
+  return (
+    <BrowserRouter>
+      <div className='app'>
+        <Header />
+        <main>
+          <Suspense fallback={<Spinner />}>
+            <Routes>
+              <Route path='/' element={<MainPage />} />
+              <Route path='/comics' element={<ComicsPage />} />
+              <Route path='/comics/:id' element={<ComicItemPage />} />
+              <Route path='*' element={<NotFoundPage />} />
+            </Routes>
+          </Suspense>
+        </main>
+      </div>
+    </BrowserRouter>
+  )
 }
 
 export default App
